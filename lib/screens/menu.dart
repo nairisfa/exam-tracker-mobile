@@ -1,3 +1,4 @@
+import 'package:exam_tracker_mobile/widgets/left_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:exam_tracker_mobile/widgets/tracker_list.dart';
 
@@ -15,9 +16,13 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Book Tracker',
+          'Exam Tracker',
         ),
+        backgroundColor: Colors.indigo,
+        foregroundColor: Colors.white,
       ),
+      // Masukkan drawer sebagai parameter nilai drawer dari widget Scaffold
+      drawer: const LeftDrawer(),
       body: SingleChildScrollView(
         // Widget wrapper yang dapat discroll
         child: Padding(

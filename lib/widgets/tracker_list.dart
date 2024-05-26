@@ -1,3 +1,5 @@
+import 'package:exam_tracker_mobile/screens/menu.dart';
+import 'package:exam_tracker_mobile/screens/trackerlist_form.dart';
 import 'package:flutter/material.dart';
 
 class TrackerItem {
@@ -24,6 +26,14 @@ class TrackerCard extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
                 content: Text("You've clicked ${item.name} button!")));
+
+          // Navigate ke route yang sesuai (tergantung jenis tombol)
+          if (item.name == "Add Exam") {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const TrackerFormPage()),
+            );
+          }
         },
         child: Container(
           // Container untuk menyimpan Icon dan Text
