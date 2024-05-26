@@ -1,3 +1,4 @@
+import 'package:exam_tracker_mobile/screens/login.dart';
 import 'package:exam_tracker_mobile/screens/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
@@ -13,14 +14,16 @@ class ExamApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return Provider(
+      create: (_) => CookieRequest(),
+        child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: HomePage(),
-    );
+        home: const LoginPage(),
+    ));
   }
 }
 
